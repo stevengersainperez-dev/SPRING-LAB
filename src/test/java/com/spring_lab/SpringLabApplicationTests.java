@@ -8,7 +8,6 @@ class SpringLabApplicationTests {
 
 	@Test
 	void contextLoads() {
-        throw new RuntimeException("¡Test roto a propósito!");
 	}
 
 }
