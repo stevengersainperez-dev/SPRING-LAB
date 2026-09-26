@@ -21,5 +21,12 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Compilar y correr tests
-        run: mvn clean test
+      - name: Compilar, testear y verificar cobertura
+        run: mvn -B clean verify
+
+      - name: Subir reporte de cobertura
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-report
+          path: target/site/jacoco/
